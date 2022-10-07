@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CrossPlatformSuite" parallel="tests">
+	<listeners>
+		<listener
+			class-name="org.tyss.universalUtility.ListenerImpClass" />
+	</listeners>
+	<test name="RealDeviceTest">
+		<parameter name="device" value="R9ZNC03VN6X"></parameter>
+		<parameter name="apppackage" value="com.flipkart.android"></parameter>
+		<parameter name="activity"
+			value="com.flipkart.android.activity.HomeFragmentHolderActivity"></parameter>
+		<parameter name="version" value="12"></parameter>
+		<parameter name="appiumServer"
+			value="http://127.0.0.1:4723/wd/hub"></parameter>
+		<classes>
+			<class name="org.flipkart.addtocart.InsertProductToCart" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="EmulatorTest">
+		<parameter name="device" value="x4soukivqw59pnjr"></parameter>
+		<parameter name="apppackage" value="com.flipkart.android"></parameter>
+		<parameter name="activity"
+			value="com.flipkart.android.activity.HomeFragmentHolderActivity"></parameter>
+		<parameter name="version" value="12"></parameter>
+		<parameter name="appiumServer"
+			value="http://127.0.0.1:4724/wd/hub"></parameter>
+		<classes>
+			<class name="org.flipkart.addtocart.InsertProductToCart" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
